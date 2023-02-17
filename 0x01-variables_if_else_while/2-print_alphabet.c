@@ -1,11 +1,10 @@
 #include <stdio.h>
 #include <unistd.h>
 /**
- * main entry point
- * a program to print lowercase alphabets
- * return= zero(success) always
+ * main - Entry point
+ * Description: prints the alphabet in lowercase\n
+ * Return: Always 0 (success)
  */
-
 int main(void)
 {
 	int ch;
@@ -14,6 +13,6 @@ int main(void)
 	{
 		putchar(ch);
 	}
-	putchar('/n');
+	putchar('\n');
 return (0);
 }
