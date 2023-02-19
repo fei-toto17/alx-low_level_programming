@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * The main prints combination of 3 random digits
+ * main = prints combination of 3 random digits
  *
  * Return: Always (Success)
  */
@@ -9,7 +9,7 @@ int main(void)
 {
 	int x, y, z;
 
-	for (x = '0'; x <= '9';x++)
+	for (x = '0'; x <= '9'; x++)
 	{
 		for (y = '0'; y <= '9'; y++)
 		{
