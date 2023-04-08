@@ -6,24 +6,21 @@
  * @b : char string
  * Return: convert decimal number to 0
  */
+
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int m, p;
-	int len;
+	unsigned int num = 0;
+	int len = 0;
 
-	if (b == NULL)
+	if (b[len] == '\0')
 		return (0);
 
-	for (len = 0; b[len]; len++)
+	while ((b[len] == '0') || (b[len] == '1'))
 	{
-		if (b[len] != '0' && b[len] != '1')
-			return (0);
+		num <<= 1;
+		num += b[len] - '0';
+		len++;
 	}
 
-	for (len = len - 1; len >= 0; len--, p *= 2)
-	{
-		if (b[len] == '1')
-			m += p;
-	}
-	return (m);
+	return (num);
 }
