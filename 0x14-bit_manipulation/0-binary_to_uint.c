@@ -2,25 +2,29 @@
 #include <stdio.h>
 
 /**
- * binary_to_unit - convert inary numbers to unsigned int
- * @b : char string
- * Return: convert decimal number to 0
+ * binary_to_uint - convert a binary number to an unsigned int
+ * @b: char string
+ * Return: converted decimal number or 0 if there is an unconvertable char
  */
-
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int num = 0;
-	int len = 0;
+	unsigned int x, y;
+	int cap;
 
-	if (b[len] == '\0')
+	if (b == NULL)
 		return (0);
 
-	while ((b[len] == '0') || (b[len] == '1'))
+	for (cap = 0; b[cap]; cap++)
 	{
-		num <<= 1;
-		num += b[len] - '0';
-		len++;
+		if (b[cap] != '0' && b[cap] != '1')
+			return (0);
 	}
 
-	return (num);
+	for (y = 1, x = 0, cap--; cap >= 0; cap--, y *= 2)
+	{
+		if (b[cap] == '1')
+			x += y;
+	}
+
+	return (x);
 }
